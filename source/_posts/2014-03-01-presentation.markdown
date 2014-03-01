@@ -5,7 +5,7 @@ date: 2014-03-01 14:59:02 +0000
 comments: true
 categories: 
 ---
-Il est temps pour moi de commencer un blog en français en plus de mon [blog anglais](http://nawrem.blogger.com).
+Il est temps pour moi de commencer un blog en français en plus de mon [blog anglais](http://nawrem.blogspot.com).
 Cela devrait me permettre d'écrire plus facilement. J'ai déjà quelques idées de thèmes:
 
 * Découverte du code source de Ruby on Rails
