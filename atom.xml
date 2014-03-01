@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Nawrem]]></title>
+  <link href="http://merwan.github.io/atom.xml" rel="self"/>
+  <link href="http://merwan.github.io/"/>
+  <updated>2014-03-01T21:44:58+00:00</updated>
+  <id>http://merwan.github.io/</id>
+  <author>
+    <name><![CDATA[Merouane Atig]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Présentation]]></title>
+    <link href="http://merwan.github.io/blog/2014/03/01/presentation/"/>
+    <updated>2014-03-01T14:59:02+00:00</updated>
+    <id>http://merwan.github.io/blog/2014/03/01/presentation</id>
+    <content type="html"><![CDATA[<p>Il est temps pour moi de commencer un blog en français en plus de mon <a href="http://nawrem.blogger.com">blog anglais</a>.
+Cela devrait me permettre d&#8217;écrire plus facilement. J&#8217;ai déjà quelques idées de thèmes:</p>
+
+<ul>
+<li>Découverte du code source de Ruby on Rails</li>
+<li>Code katas en Ruby, Python, C# et peut-être Go</li>
+<li>Suivi d&#8217;un projet de Single Page Application from
+scratch (probablement du Angular côté client + du Node avec Express côté serveur)</li>
+</ul>
+
+
+<p>On verra dans quelques mois si j&#8217;arrive à mener tout cela à bien !</p>
+]]></content>
+  </entry>
+  
+</feed>
