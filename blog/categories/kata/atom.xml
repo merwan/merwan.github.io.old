@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Nawrem]]></title>
-  <link href="http://merwan.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Kata | Nawrem]]></title>
+  <link href="http://merwan.github.io/blog/categories/kata/atom.xml" rel="self"/>
   <link href="http://merwan.github.io/"/>
   <updated>2014-03-04T21:29:56+00:00</updated>
   <id>http://merwan.github.io/</id>
@@ -18,17 +18,16 @@
     <link href="http://merwan.github.io/blog/2014/03/03/premier-code-kata/"/>
     <updated>2014-03-03T22:36:40+00:00</updated>
     <id>http://merwan.github.io/blog/2014/03/03/premier-code-kata</id>
-    <content type="html"><![CDATA[<p>J&#8217;ai créé un <a href="https://github.com/merwan/katas">repository sur github</a> pour stocker mes code katas.</p>
+    <content type="html"><![CDATA[<p>J'ai créé un <a href="https://github.com/merwan/katas">repository sur github</a> pour stocker mes code katas.</p>
 
-<p>Pour mon premier kata, je commence léger puisqu&#8217;il s&#8217;agit de <a href="http://craftsmanship.sv.cmu.edu/katas/fizzbuzz">FizzBuzz</a>. Le langage choisi est JavaScript et j&#8217;utilise le package npm jasmine-node pour faire tout cela en TDD :</p>
+<p>Pour mon premier kata, je commence léger puisqu'il s'agit de <a href="http://craftsmanship.sv.cmu.edu/katas/fizzbuzz">FizzBuzz</a>. Le langage choisi est JavaScript et j'utilise le package npm jasmine-node pour faire tout cela en TDD :
+<code>
+npm install jasmine-node -g
+</code></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>npm install jasmine-node -g</span></code></pre></td></tr></table></div></figure>
+<p>Pour cette implémentation, j'ai choisi de créer une méthode qui prend le nombre maximal jusqu'auquel on souhaite compter. Cette méthode retourne un tableau avec l'ensemble des valeurs à afficher. Le fichier de spec est alors :</p>
 
-
-<p>Pour cette implémentation, j&#8217;ai choisi de créer une méthode qui prend le nombre maximal jusqu&#8217;auquel on souhaite compter. Cette méthode retourne un tableau avec l&#8217;ensemble des valeurs à afficher. Le fichier de spec est alors :</p>
-
-<figure class='code'><figcaption><span> (fizzbuzz_test.spec.js)</span> <a href='/downloads/code/fizzbuzz_test.spec.js'>download</a></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (fizzbuzz_test.spec.js)</span> <a href='/downloads/code/fizzbuzz_test.spec.js'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -109,14 +108,13 @@
 </span><span class='line'>    <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Buzz&quot;</span><span class="p">,</span> <span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="s2">&quot;Buzz&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;FizzBuzz&quot;</span><span class="p">]);</span>
 </span><span class='line'>  <span class="p">});</span>
 </span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
+<p>Comme on peut le voir, c'est très verbeux et par conséquent c'est fastidieux d'ajouter un test.</p>
 
-<p>Comme on peut le voir, c&#8217;est très verbeux et par conséquent c&#8217;est fastidieux d&#8217;ajouter un test.</p>
+<p>Il n'y a pas de surprises dans l'implémentation :</p>
 
-<p>Il n&#8217;y a pas de surprises dans l&#8217;implémentation :</p>
-
-<figure class='code'><figcaption><span> (fizzbuzz.js)</span> <a href='/downloads/code/fizzbuzz.js'>download</a></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (fizzbuzz.js)</span> <a href='/downloads/code/fizzbuzz.js'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -159,30 +157,9 @@
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">FizzBuzz</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-
-<p>Lors mon prochain essai, je changerai probablement l&#8217;API pour passer le nombre à &ldquo;traduire&rdquo; en argument d&#8217;une méthode. Cela permettra d&#8217;avoir des tests beaucoup plus concis et l&#8217;implémentation sera simplifiée. L&#8217;énumération des nombres sera alors déléguée au code appelant la méthode de FizzBuzz.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Présentation]]></title>
-    <link href="http://merwan.github.io/blog/2014/03/01/presentation/"/>
-    <updated>2014-03-01T14:59:02+00:00</updated>
-    <id>http://merwan.github.io/blog/2014/03/01/presentation</id>
-    <content type="html"><![CDATA[<p>Il est temps pour moi de commencer un blog en français en plus de mon <a href="http://nawrem.blogspot.com">blog anglais</a>.
-Cela devrait me permettre d&#8217;écrire plus facilement. J&#8217;ai déjà quelques idées de thèmes:</p>
-
-<ul>
-<li>Découverte du code source de Ruby on Rails</li>
-<li>Code katas en Ruby, Python, C# et peut-être Go</li>
-<li>Suivi d&#8217;un projet de Single Page Application from
-scratch (probablement du Angular côté client + du Node avec Express côté serveur)</li>
-</ul>
-
-
-<p>On verra dans quelques mois si j&#8217;arrive à mener tout cela à bien !</p>
+<p>Lors mon prochain essai, je changerai probablement l'API pour passer le nombre à &ldquo;traduire&rdquo; en argument d'une méthode. Cela permettra d'avoir des tests beaucoup plus concis et l'implémentation sera simplifiée. L'énumération des nombres sera alors déléguée au code appelant la méthode de FizzBuzz.</p>
 ]]></content>
   </entry>
   
