@@ -4,7 +4,7 @@
   <title><![CDATA[Nawrem]]></title>
   <link href="http://merwan.github.io/atom.xml" rel="self"/>
   <link href="http://merwan.github.io/"/>
-  <updated>2014-03-04T21:29:56+00:00</updated>
+  <updated>2014-03-29T15:23:00+00:00</updated>
   <id>http://merwan.github.io/</id>
   <author>
     <name><![CDATA[Merouane Atig]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Quand Utiliser Les Helpers _path Et _url Avec Ruby on Rails]]></title>
+    <link href="http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/"/>
+    <updated>2014-03-29T14:23:50+00:00</updated>
+    <id>http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Il y a deux façons d&#8217;exprimer les liens et URLs avec Ruby on Rails : _path &ndash; qui exprime un chemin relatif &ndash; et _url qui correspond au même chemin préfixé du nom d&#8217;hôte, du port et du path prefix.</p>
+
+<p>D&#8217;après les <a href="http://www.ietf.org/rfc/rfc2616.txt">spécifications HTTP</a>, les redirections doivent spécifier une URI, ce qu&#8217;on peut interpréter comme un <em>fully qualified domain name</em> (nom de domaine complètement qualifié). On peut donc penser qu&#8217;il est préférable d&#8217;utiliser le helper _url lorsqu&#8217;on fait un redirect_to dans le code d&#8217;un controller.</p>
+
+<p>Dans la pratique avec Ruby on Rails, on préfère utiliser _path plutôt que _url. En effet, le navigateur est capable de retrouver l&#8217;URL complète automatiquement en se basant sur les informations de la requête.</p>
+
+<p>Pour résumer, si on veut être pointilleux il est conseillé d&#8217;utiliser _url pour les redirections et _path dans le code des vues (pour les liens par exemples). Quel que soit le choix effectué, le navigateur saura toujours reconstruire l&#8217;URL correctement.</p>
+
+<p>Référence: <a href="https://www.informit.com/articles/article.aspx?p=1087656&amp;seqNum=17">Obie Fernandez &ndash; Routing the Rails Way</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[FizzBuzz Kata en JavaScript]]></title>

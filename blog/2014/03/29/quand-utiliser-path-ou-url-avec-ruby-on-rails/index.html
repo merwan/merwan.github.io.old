@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Kata - Nawrem</title>
+  <title>Quand Utiliser Les Helpers _path Et _url Avec Ruby on Rails - Nawrem</title>
   <meta name="author" content="Merouane Atig">
 
   
-  <meta name="description" content="Category: kata">
+  <meta name="description" content="Il y a deux façons d&#8217;exprimer les liens et URLs avec Ruby on Rails : _path &ndash; qui exprime un chemin relatif &ndash; et _url qui correspond &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://merwan.github.ioblog/categories/kata">
+  <link rel="canonical" href="http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Nawrem" type="application/atom+xml">
@@ -76,35 +76,92 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Kata</h1>
+    
+      <h1 class="entry-title">Quand Utiliser Les Helpers _path Et _url Avec Ruby on Rails</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-29T14:23:50+00:00" pubdate data-updated="true">Mar 29<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Il y a deux façons d&#8217;exprimer les liens et URLs avec Ruby on Rails : _path &ndash; qui exprime un chemin relatif &ndash; et _url qui correspond au même chemin préfixé du nom d&#8217;hôte, du port et du path prefix.</p>
 
-  
-  <h2>2014</h2>
+<p>D&#8217;après les <a href="http://www.ietf.org/rfc/rfc2616.txt">spécifications HTTP</a>, les redirections doivent spécifier une URI, ce qu&#8217;on peut interpréter comme un <em>fully qualified domain name</em> (nom de domaine complètement qualifié). On peut donc penser qu&#8217;il est préférable d&#8217;utiliser le helper _url lorsqu&#8217;on fait un redirect_to dans le code d&#8217;un controller.</p>
 
-<article>
-  
-<h1><a href="/blog/2014/03/03/premier-code-kata/">FizzBuzz Kata en JavaScript</a></h1>
-<time datetime="2014-03-03T22:36:40+00:00" pubdate><span class='month'>Mar</span> <span class='day'>03</span> <span class='year'>2014</span></time>
+<p>Dans la pratique avec Ruby on Rails, on préfère utiliser _path plutôt que _url. En effet, le navigateur est capable de retrouver l&#8217;URL complète automatiquement en se basant sur les informations de la requête.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/kata/'>kata</a></span>
-</footer>
+<p>Pour résumer, si on veut être pointilleux il est conseillé d&#8217;utiliser _url pour les redirections et _path dans le code des vues (pour les liens par exemples). Quel que soit le choix effectué, le navigateur saura toujours reconstruire l&#8217;URL correctement.</p>
 
-
-</article>
-
+<p>Référence: <a href="https://www.informit.com/articles/article.aspx?p=1087656&amp;seqNum=17">Obie Fernandez &ndash; Routing the Rails Way</a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Merouane Atig</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-29T14:23:50+00:00" pubdate data-updated="true">Mar 29<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/" data-via="merwanat" data-counturl="http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/03/03/premier-code-kata/" title="Previous Post: FizzBuzz kata en JavaScript">&laquo; FizzBuzz kata en JavaScript</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

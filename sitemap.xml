@@ -9,8 +9,14 @@
         <lastmod>2014-03-04T21:29:20+00:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/
+        </loc>
+        <lastmod>2014-03-29T15:22:59+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://merwan.github.io/</loc>
-        <lastmod>2014-03-04T21:29:20+00:00</lastmod>
+        <lastmod>2014-03-29T15:22:59+00:00</lastmod>
     </url>
     <url>
         <loc>http://merwan.github.io/robots.txt</loc>
@@ -18,6 +24,6 @@
     </url>
     <url>
         <loc>http://merwan.github.io/blog/archives/</loc>
-        <lastmod>2014-03-04T21:29:20+00:00</lastmod>
+        <lastmod>2014-03-29T15:22:59+00:00</lastmod>
     </url>
 </urlset>
