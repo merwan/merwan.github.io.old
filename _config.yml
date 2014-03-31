@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://merwan.github.io
-title: Nawrem
-subtitle: Mon blog en français.
-author: Merouane Atig
+title: "Merwan's blog"
+subtitle: "Rhapsody in code"
+author: "Merouane Atig"
 simple_search: http://google.com/search
-description: Blog de Mérouane Atig en français qui parle de code et de développement logiciel.
+description: "Blog technique de Mérouane Atig : Ruby, JavaScript et autre."
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
