@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Présentation - Nawrem</title>
+  <title>Présentation - Merwan's blog</title>
   <meta name="author" content="Merouane Atig">
 
   
@@ -22,7 +22,7 @@ Cela devrait me permettre d&#8217;écrire plus facilement. J&#8217 &hellip;">
   <link rel="canonical" href="http://merwan.github.io/blog/2014/03/01/presentation">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Nawrem" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Merwan's blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -49,9 +49,9 @@ Cela devrait me permettre d&#8217;écrire plus facilement. J&#8217 &hellip;">
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">Nawrem</a></h1>
+  <h1><a href="/">Merwan's blog</a></h1>
   
-    <h2>Mon blog en français.</h2>
+    <h2>Rhapsody in code</h2>
   
 </hgroup>
 
@@ -149,6 +149,8 @@ scratch (probablement du Angular côté client + du Node avec Express côté ser
   <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merwan.github.io/blog/2014/03/01/presentation/" data-via="merwanat" data-counturl="http://merwan.github.io/blog/2014/03/01/presentation/" >Tweet</a>
   
   
+  <div class="g-plusone" data-size="medium"></div>
+  
   
 </div>
 
@@ -161,6 +163,12 @@ scratch (probablement du Angular côté client + du Node avec Express côté ser
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -185,6 +193,35 @@ scratch (probablement du Angular côté client + du Node avec Express côté ser
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/merwan">@merwan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'merwan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
 
 
 
@@ -203,9 +240,33 @@ scratch (probablement du Angular côté client + du Node avec Express côté ser
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'merwanat';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://merwan.github.io/blog/2014/03/01/presentation/';
+        var disqus_url = 'http://merwan.github.io/blog/2014/03/01/presentation/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

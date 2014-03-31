@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Nawrem]]></title>
+  <title><![CDATA[Merwan's blog]]></title>
   <link href="http://merwan.github.io/atom.xml" rel="self"/>
   <link href="http://merwan.github.io/"/>
-  <updated>2014-03-29T15:23:00+00:00</updated>
+  <updated>2014-03-31T07:15:11+00:00</updated>
   <id>http://merwan.github.io/</id>
   <author>
     <name><![CDATA[Merouane Atig]]></name>
