@@ -12,9 +12,9 @@ Ma nouvelle station de travail est un DELL Precision M4800, modèle équipé d'u
 
 Malheureusement, ce genre d'écran n'est pas encore très bien supporté sous Linux. Pour
 avoir une résolution d'écran acceptable sur une Ubuntu avec XFCE, j'ai donc suivi les
-[instructions suivantes](https://wiki.archlinux.org/index.php/HiDPI).
+[instructions trouvées sur le wiki de Arch Linux](https://wiki.archlinux.org/index.php/HiDPI).
 
-# XFCE
+## XFCE
 
 Ajouter au fichier `~/.config/xfce4/Xft.xrdb` la ligne suivante:
 ```
@@ -26,24 +26,24 @@ Dans Paramètres|Tableau de bord, on peut mettre le paramètre "Taille d'une lig
 Dans les paramètres de zone de notification (accessible via un click droit sur la zone de
 notification), on peut mettre la taille maximale d'une icône à `48px`.
 
-# Firefox et Thunderbird
+## Firefox et Thunderbird
 
-Pour Firefox, dans about:config il faut rechercher la propriété `layout.css.devPixelsPerPx`
+Pour Firefox, dans `about:config` il faut rechercher la propriété `layout.css.devPixelsPerPx`
 et lui donner la valeur `2`.
 
 Pour Thunderbird, on peut accéder à l'éditeur de configuration dans Préférences|Avancé|Général
 et mettre là aussi `layout.css.devPixelsPerPx` à `2`.
 
-# urxvt
+## urxvt
 
 Pour urxvt (paquet `rxvt-unicode`), on peut avoir une fonte de taille plus agréable en ajoutant
 la ligne `urxvt.font: xft:DejaVuSansMono:size=10` au fichier `.Xresources`.
 
-# Eclipse
+## Eclipse
 
 Malheureusement, pour l'instant [Eclipse ne supporte pas le HiDPI ](https://bugs.eclipse.org/bugs/show_bug.cgi?id=403993).
 
-# Conclusion
+## Conclusion
 
 On peut donc utiliser un écran HiDPI avec une Ubuntu et XFCE et on peut espérer que les
 quelques applications qui ne supportent pas encore les hautes résolutions seront corrigées
