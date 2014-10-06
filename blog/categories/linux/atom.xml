@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | Merwan's blog]]></title>
+  <link href="http://merwan.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://merwan.github.io/"/>
+  <updated>2014-10-06T22:57:16+02:00</updated>
+  <id>http://merwan.github.io/</id>
+  <author>
+    <name><![CDATA[Merouane Atig]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Utiliser XFCE Avec Un écran HiDPI Ou "Retina"]]></title>
+    <link href="http://merwan.github.io/blog/2014/08/19/utiliser-XFCE-avec-un-ecran-HiDPI-ou-Retina/"/>
+    <updated>2014-08-19T09:35:55+02:00</updated>
+    <id>http://merwan.github.io/blog/2014/08/19/utiliser-XFCE-avec-un-ecran-HiDPI-ou-Retina</id>
+    <content type="html"><![CDATA[<p>Ma nouvelle station de travail est un DELL Precision M4800, modèle équipé d'un
+écran très haute résolution QHD+ 3200x1800 pixels
+(<a href="http://en.wikipedia.org/wiki/Retina_Display">aussi appelé HiDPI ou Retina chez Apple</a>).</p>
+
+<p>Malheureusement, ce genre d'écran n'est pas encore très bien supporté sous Linux. Pour
+avoir une résolution d'écran acceptable sur une Ubuntu avec XFCE, j'ai donc suivi les
+<a href="https://wiki.archlinux.org/index.php/HiDPI">instructions trouvées sur le wiki de Arch Linux</a>.</p>
+
+<h2>XFCE</h2>
+
+<p>Ajouter au fichier <code>~/.config/xfce4/Xft.xrdb</code> la ligne suivante:
+<code>
+Xft.dpi: 180
+</code></p>
+
+<p>Dans Paramètres|Tableau de bord, on peut mettre le paramètre &ldquo;Taille d'une ligne&rdquo; à <code>48px</code>.</p>
+
+<p>Dans les paramètres de zone de notification (accessible via un click droit sur la zone de
+notification), on peut mettre la taille maximale d'une icône à <code>48px</code>.</p>
+
+<h2>Firefox et Thunderbird</h2>
+
+<p>Pour Firefox, dans <code>about:config</code> il faut rechercher la propriété <code>layout.css.devPixelsPerPx</code>
+et lui donner la valeur <code>2</code>.</p>
+
+<p>Pour Thunderbird, on peut accéder à l'éditeur de configuration dans Préférences|Avancé|Général
+et mettre là aussi <code>layout.css.devPixelsPerPx</code> à <code>2</code>.</p>
+
+<h2>urxvt</h2>
+
+<p>Pour urxvt (paquet <code>rxvt-unicode</code>), on peut avoir une fonte de taille plus agréable en ajoutant
+la ligne <code>urxvt.font: xft:DejaVuSansMono:size=10</code> au fichier <code>.Xresources</code>.</p>
+
+<h2>Eclipse</h2>
+
+<p>Malheureusement, pour l'instant <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=403993">Eclipse ne supporte pas le HiDPI </a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>On peut donc utiliser un écran HiDPI avec une Ubuntu et XFCE et on peut espérer que les
+quelques applications qui ne supportent pas encore les hautes résolutions seront corrigées
+dans le futur.</p>
+]]></content>
+  </entry>
+  
+</feed>
