@@ -16,20 +16,35 @@ avoir une résolution d'écran acceptable sur une Ubuntu avec XFCE, j'ai donc su
 
 # XFCE
 
-Ajouter au fichier ~/.config/xfce4/Xft.xrdb la ligne suivante:
+Ajouter au fichier `~/.config/xfce4/Xft.xrdb` la ligne suivante:
 ```
 Xft.dpi: 180
 ```
 
-Dans Paramètres|Tableau de bord, on peut mettre le paramètre "Taille d'une ligne" à 48px.
+Dans Paramètres|Tableau de bord, on peut mettre le paramètre "Taille d'une ligne" à `48px`.
 
 Dans les paramètres de zone de notification (accessible via un click droit sur la zone de
-notification), on peut mettre la taille maximale d'une icône à 48px.
+notification), on peut mettre la taille maximale d'une icône à `48px`.
 
 # Firefox et Thunderbird
 
-Pour Firefox, dans about:config il faut rechercher la propriété layout.css.devPixelsPerPx
-et lui donner la valeur 2.
+Pour Firefox, dans about:config il faut rechercher la propriété `layout.css.devPixelsPerPx`
+et lui donner la valeur `2`.
 
 Pour Thunderbird, on peut accéder à l'éditeur de configuration dans Préférences|Avancé|Général
-et mettre là aussi layout.css.devPixelsPerPx = 2
+et mettre là aussi `layout.css.devPixelsPerPx` à `2`.
+
+# urxvt
+
+Pour urxvt (paquet `rxvt-unicode`), on peut avoir une fonte de taille plus agréable en ajoutant
+la ligne `urxvt.font: xft:DejaVuSansMono:size=10` au fichier `.Xresources`.
+
+# Eclipse
+
+Malheureusement, pour l'instant [Eclipse ne supporte pas le HiDPI ](https://bugs.eclipse.org/bugs/show_bug.cgi?id=403993).
+
+# Conclusion
+
+On peut donc utiliser un écran HiDPI avec une Ubuntu et XFCE et on peut espérer que les
+quelques applications qui ne supportent pas encore les hautes résolutions seront corrigées
+dans le futur.
