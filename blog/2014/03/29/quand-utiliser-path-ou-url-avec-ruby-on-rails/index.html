@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Quand Utiliser Les Helpers _path Et _url Avec Ruby on Rails - Merwan's blog</title>
+  <meta name="author" content="Merouane Atig">
+
+  
+  <meta name="description" content="Il y a deux façons d&#8217;exprimer les liens et URLs avec Ruby on Rails : _path &ndash; qui exprime un chemin relatif &ndash; et _url qui correspond &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Merwan's blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48359436-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Merwan's blog</a></h1>
+  
+    <h2>Rhapsody in code</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:merwan.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Quand Utiliser Les Helpers _path Et _url Avec Ruby on Rails</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-29T15:23:50+01:00" pubdate data-updated="true">Mar 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Il y a deux façons d&#8217;exprimer les liens et URLs avec Ruby on Rails : _path &ndash; qui exprime un chemin relatif &ndash; et _url qui correspond au même chemin préfixé du nom d&#8217;hôte, du port et du path prefix.</p>
+
+<p>D&#8217;après les <a href="http://www.ietf.org/rfc/rfc2616.txt">spécifications HTTP</a>, les redirections doivent spécifier une URI, ce qu&#8217;on peut interpréter comme un <em>fully qualified domain name</em> (nom de domaine complètement qualifié). On peut donc penser qu&#8217;il est préférable d&#8217;utiliser le helper _url lorsqu&#8217;on fait un redirect_to dans le code d&#8217;un controller.</p>
+
+<p>Dans la pratique avec Ruby on Rails, on préfère utiliser _path plutôt que _url. En effet, le navigateur est capable de retrouver l&#8217;URL complète automatiquement en se basant sur les informations de la requête.</p>
+
+<p>Pour résumer, si on veut être pointilleux il est conseillé d&#8217;utiliser _url pour les redirections et _path dans le code des vues (pour les liens par exemples). Quel que soit le choix effectué, le navigateur saura toujours reconstruire l&#8217;URL correctement.</p>
+
+<p>Référence: <a href="https://www.informit.com/articles/article.aspx?p=1087656&amp;seqNum=17">Obie Fernandez &ndash; Routing the Rails Way</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Merouane Atig</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-29T15:23:50+01:00" pubdate data-updated="true">Mar 29<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/" data-via="merwanat" data-counturl="http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/03/03/premier-code-kata/" title="Previous Post: FizzBuzz kata en JavaScript">&laquo; FizzBuzz kata en JavaScript</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/19/utiliser-XFCE-avec-un-ecran-HiDPI-ou-Retina/" title="Next Post: utiliser XFCE avec un écran HiDPI ou "Retina"">utiliser XFCE avec un écran HiDPI ou "Retina" &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/19/utiliser-XFCE-avec-un-ecran-HiDPI-ou-Retina/">Utiliser XFCE Avec Un écran HiDPI Ou "Retina"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/">Quand Utiliser Les Helpers _path Et _url Avec Ruby on Rails</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/03/premier-code-kata/">FizzBuzz Kata en JavaScript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/01/presentation/">Présentation</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/merwan">@merwan</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'merwan',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Merouane Atig -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'merwanat';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/';
+        var disqus_url = 'http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
