@@ -16,7 +16,7 @@ avoir une résolution d'écran acceptable sur une Ubuntu avec XFCE, j'ai donc su
 
 ## XFCE
 
-Ajouter au fichier `~/.config/xfce4/Xft.xrdb` la ligne suivante:
+Ajouter au fichier `~/.config/xfce4/Xft.xrdb` la ligne suivante :
 ```
 Xft.dpi: 180
 ```
@@ -25,6 +25,15 @@ Dans Paramètres|Tableau de bord, on peut mettre le paramètre "Taille d'une lig
 
 Dans les paramètres de zone de notification (accessible via un click droit sur la zone de
 notification), on peut mettre la taille maximale d'une icône à `48px`.
+
+On peut aussi modifier la taille des scrollbars en éditant le fichier `~/.gtkrc-2.0` :
+```
+style "myscrollbar"
+{
+    GtkScrollbar::slider-width=20
+}
+class "GtkScrollbar" style "myscrollbar"
+```
 
 ## Firefox et Thunderbird
 
