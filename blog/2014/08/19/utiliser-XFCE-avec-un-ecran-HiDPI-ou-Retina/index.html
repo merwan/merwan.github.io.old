@@ -115,7 +115,7 @@ avoir une résolution d&#8217;écran acceptable sur une Ubuntu avec XFCE, j&#821
 
 <h2>XFCE</h2>
 
-<p>Ajouter au fichier <code>~/.config/xfce4/Xft.xrdb</code> la ligne suivante:</p>
+<p>Ajouter au fichier <code>~/.config/xfce4/Xft.xrdb</code> la ligne suivante :</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>Xft.dpi: 180</span></code></pre></td></tr></table></div></figure>
@@ -125,6 +125,20 @@ avoir une résolution d&#8217;écran acceptable sur une Ubuntu avec XFCE, j&#821
 
 <p>Dans les paramètres de zone de notification (accessible via un click droit sur la zone de
 notification), on peut mettre la taille maximale d&#8217;une icône à <code>48px</code>.</p>
+
+<p>On peut aussi modifier la taille des scrollbars en éditant le fichier <code>~/.gtkrc-2.0</code> :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>style "myscrollbar"
+</span><span class='line'>{
+</span><span class='line'>    GtkScrollbar::slider-width=20
+</span><span class='line'>}
+</span><span class='line'>class "GtkScrollbar" style "myscrollbar"</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Firefox et Thunderbird</h2>
 

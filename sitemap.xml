@@ -2,34 +2,34 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://merwan.github.io/blog/2014/03/01/presentation/</loc>
-        <lastmod>2014-09-12T23:41:57+02:00</lastmod>
+        <lastmod>2014-10-06T22:57:52+02:00</lastmod>
     </url>
     <url>
         <loc>http://merwan.github.io/blog/2014/03/03/premier-code-kata/</loc>
-        <lastmod>2014-09-12T23:41:57+02:00</lastmod>
+        <lastmod>2014-10-06T22:57:52+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://merwan.github.io/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/
         </loc>
-        <lastmod>2014-09-12T23:41:57+02:00</lastmod>
+        <lastmod>2014-10-06T22:57:52+02:00</lastmod>
     </url>
     <url>
         <loc>
             http://merwan.github.io/blog/2014/08/19/utiliser-XFCE-avec-un-ecran-HiDPI-ou-Retina/
         </loc>
-        <lastmod>2014-10-06T22:57:00+02:00</lastmod>
+        <lastmod>2014-10-28T11:44:22+01:00</lastmod>
     </url>
     <url>
         <loc>http://merwan.github.io/blog/archives/</loc>
-        <lastmod>2014-10-06T22:57:00+02:00</lastmod>
+        <lastmod>2014-10-28T11:44:22+01:00</lastmod>
     </url>
     <url>
         <loc>http://merwan.github.io/robots.txt</loc>
-        <lastmod>2014-09-12T23:41:57+02:00</lastmod>
+        <lastmod>2014-10-06T22:57:52+02:00</lastmod>
     </url>
     <url>
         <loc>http://merwan.github.io/</loc>
-        <lastmod>2014-10-06T22:57:00+02:00</lastmod>
+        <lastmod>2014-10-28T11:44:22+01:00</lastmod>
     </url>
 </urlset>

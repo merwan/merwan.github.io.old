@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Merwan's blog]]></title>
   <link href="http://merwan.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://merwan.github.io/"/>
-  <updated>2014-10-06T22:57:16+02:00</updated>
+  <updated>2014-10-28T11:45:46+01:00</updated>
   <id>http://merwan.github.io/</id>
   <author>
     <name><![CDATA[Merouane Atig]]></name>
@@ -28,7 +28,7 @@ avoir une résolution d'écran acceptable sur une Ubuntu avec XFCE, j'ai donc su
 
 <h2>XFCE</h2>
 
-<p>Ajouter au fichier <code>~/.config/xfce4/Xft.xrdb</code> la ligne suivante:
+<p>Ajouter au fichier <code>~/.config/xfce4/Xft.xrdb</code> la ligne suivante :
 <code>
 Xft.dpi: 180
 </code></p>
@@ -37,6 +37,18 @@ Xft.dpi: 180
 
 <p>Dans les paramètres de zone de notification (accessible via un click droit sur la zone de
 notification), on peut mettre la taille maximale d'une icône à <code>48px</code>.</p>
+
+<p>On peut aussi modifier la taille des scrollbars en éditant le fichier <code>~/.gtkrc-2.0</code> :
+```
+style &ldquo;myscrollbar&rdquo;
+{</p>
+
+<pre><code>GtkScrollbar::slider-width=20
+</code></pre>
+
+<p>}
+class &ldquo;GtkScrollbar&rdquo; style &ldquo;myscrollbar&rdquo;
+```</p>
 
 <h2>Firefox et Thunderbird</h2>
 
