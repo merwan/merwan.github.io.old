@@ -4,7 +4,7 @@
   <title><![CDATA[Merwan's blog]]></title>
   <link href="http://merwan.github.io/atom.xml" rel="self"/>
   <link href="http://merwan.github.io/"/>
-  <updated>2014-10-28T11:45:46+01:00</updated>
+  <updated>2015-02-23T17:24:17+01:00</updated>
   <id>http://merwan.github.io/</id>
   <author>
     <name><![CDATA[Merouane Atig]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Supprimer Toutes Les Tables Avec Django 1.7]]></title>
+    <link href="http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/"/>
+    <updated>2015-02-23T17:07:34+01:00</updated>
+    <id>http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17</id>
+    <content type="html"><![CDATA[<p>Lorsque l&#8217;on veut repartir d&#8217;une base vide avec un projet Django 1.7 qui utilise les
+migrations, on peut utiliser la commande:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./manage.py migrate &lt;app&gt; zero
+</span><span class='line'># Remplacer &lt;app&gt; par le nom de votre application</span></code></pre></td></tr></table></div></figure>
+
+
+<p>La migration <code>zero</code> correspond à l&#8217;état juste avant que la première migration ait été
+appliquée. Cette commande va ainsi annuler toutes les migrations et supprimer toutes
+les tables.</p>
+
+<p>C&#8217;est particulièrement utile lorsque l&#8217;on travaille avec une base PostgreSQL puisque
+cela permet d&#8217;éviter de supprimer manuellement la base et de la recréer.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Utiliser XFCE Avec Un écran HiDPI Ou "Retina"]]></title>

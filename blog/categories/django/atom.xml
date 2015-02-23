@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Django | Merwan's blog]]></title>
+  <link href="http://merwan.github.io/blog/categories/django/atom.xml" rel="self"/>
+  <link href="http://merwan.github.io/"/>
+  <updated>2015-02-23T17:24:17+01:00</updated>
+  <id>http://merwan.github.io/</id>
+  <author>
+    <name><![CDATA[Merouane Atig]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Supprimer Toutes Les Tables Avec Django 1.7]]></title>
+    <link href="http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/"/>
+    <updated>2015-02-23T17:07:34+01:00</updated>
+    <id>http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17</id>
+    <content type="html"><![CDATA[<p>Lorsque l'on veut repartir d'une base vide avec un projet Django 1.7 qui utilise les
+migrations, on peut utiliser la commande:
+```
+./manage.py migrate <app> zero</p>
+
+<h1>Remplacer <app> par le nom de votre application</h1>
+
+<p>```</p>
+
+<p>La migration <code>zero</code> correspond à l'état juste avant que la première migration ait été
+appliquée. Cette commande va ainsi annuler toutes les migrations et supprimer toutes
+les tables.</p>
+
+<p>C'est particulièrement utile lorsque l'on travaille avec une base PostgreSQL puisque
+cela permet d'éviter de supprimer manuellement la base et de la recréer.</p>
+]]></content>
+  </entry>
+  
+</feed>

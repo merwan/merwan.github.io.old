@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Rails - Merwan's blog</title>
+  <title>Supprimer Toutes Les Tables Avec Django 1.7 - Merwan's blog</title>
   <meta name="author" content="Merouane Atig">
 
   
-  <meta name="description" content="Category: rails">
+  <meta name="description" content="Lorsque l&#8217;on veut repartir d&#8217;une base vide avec un projet Django 1.7 qui utilise les
+migrations, on peut utiliser la commande: 1
+2
+./ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://merwan.github.ioblog/categories/rails">
+  <link rel="canonical" href="http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Merwan's blog" type="application/atom+xml">
@@ -76,36 +79,105 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Rails</h1>
+    
+      <h1 class="entry-title">Supprimer Toutes Les Tables Avec Django 1.7</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-23T17:07:34+01:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2015</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Lorsque l&#8217;on veut repartir d&#8217;une base vide avec un projet Django 1.7 qui utilise les
+migrations, on peut utiliser la commande:</p>
 
-  
-  <h2>2014</h2>
-
-<article>
-  
-<h1><a href="/blog/2014/03/29/quand-utiliser-path-ou-url-avec-ruby-on-rails/">Quand Utiliser Les Helpers _path Et _url Avec Ruby on Rails</a></h1>
-<time datetime="2014-03-29T15:23:50+01:00" pubdate><span class='month'>Mar</span> <span class='day'>29</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/rails/'>rails</a></span>
-</footer>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./manage.py migrate &lt;app&gt; zero
+</span><span class='line'># Remplacer &lt;app&gt; par le nom de votre application</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>La migration <code>zero</code> correspond à l&#8217;état juste avant que la première migration ait été
+appliquée. Cette commande va ainsi annuler toutes les migrations et supprimer toutes
+les tables.</p>
 
+<p>C&#8217;est particulièrement utile lorsque l&#8217;on travaille avec une base PostgreSQL puisque
+cela permet d&#8217;éviter de supprimer manuellement la base et de la recréer.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Merouane Atig</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-23T17:07:34+01:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/django/'>Django</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/" data-via="merwanat" data-counturl="http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/19/utiliser-XFCE-avec-un-ecran-HiDPI-ou-Retina/" title="Previous Post: utiliser XFCE avec un écran HiDPI ou "Retina"">&laquo; utiliser XFCE avec un écran HiDPI ou "Retina"</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -189,7 +261,10 @@
       var disqus_shortname = 'merwanat';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/';
+        var disqus_url = 'http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
