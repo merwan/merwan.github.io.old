@@ -9,10 +9,8 @@
   <meta name="author" content="Merouane Atig">
 
   
-  <meta name="description" content="Lorsque l&#8217;on veut repartir d&#8217;une base vide avec un projet Django 1.7 qui utilise les
-migrations, on peut utiliser la commande: 1
-2
-./ &hellip;">
+  <meta name="description" content="Aujourd&#8217;hui, j&#8217;ai voulu intégrer Piwik Web Analytics dans
+une application Django sans ajouter de nouvelle dépendance. La solution la plus &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +78,157 @@ migrations, on peut utiliser la commande: 1
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/24/deployer-piwik-avec-django/">Déployer Piwik Avec Django</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-24T22:25:39+01:00" pubdate data-updated="true">Feb 24<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Aujourd&#8217;hui, j&#8217;ai voulu intégrer <a href="http://piwik.org/">Piwik Web Analytics</a> dans
+une application Django sans ajouter de nouvelle dépendance. La solution la plus
+que j&#8217;ai trouvé s&#8217;appuie sur le fichier de settings et la création d&#8217;un
+<a href="https://docs.djangoproject.com/en/dev/ref/templates/api/#writing-your-own-context-processors">context processor</a>.</p>
+
+<h2>Définition des variables Piwik dans <code>settings.py</code></h2>
+
+<p>Dans le fichier <code>settings.py</code>, ajouter des variables pour l&#8217;URL de votre instance
+Piwik et l&#8217;ID du site.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">PIWIK_IDSITE</span> <span class="o">=</span> <span class="s">&#39;123&#39;</span>
+</span><span class='line'><span class="n">PIWIK_URL</span> <span class="o">=</span> <span class="s">&#39;analytics.example.com&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Création du context processor</h2>
+
+<p>Créer un fichier <code>context_processor.py</code> qui lit les variables de Piwik dans le
+fichier de settings et les rends accessibles aux templates.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">piwik_analytics</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">{</span>
+</span><span class='line'>        <span class="s">&#39;PIWIK_URL&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">PIWIK_URL</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&#39;PIWIK_IDSITE&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">PIWIK_IDSITE</span><span class="p">,</span>
+</span><span class='line'>    <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Ajout du context processor au settings</h2>
+
+<p>Dans le fichier <code>settings.py</code>, ajouter le context processor à <code>TEMPLATE_CONTEXT_PROCESSORS</code>.
+Le plus simple pour conserver les context processors par défaut de Django est de les importer
+depuis <code>global_settings</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">global_settings</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">TEMPLATE_CONTEXT_PROCESSORS</span> <span class="o">=</span> <span class="n">global_settings</span><span class="o">.</span><span class="n">TEMPLATE_CONTEXT_PROCESSORS</span> <span class="o">+</span> <span class="p">(</span>
+</span><span class='line'>    <span class="s">&#39;website.context_processors.piwik_analytics&#39;</span><span class="p">,</span>
+</span><span class='line'><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Créer un template pour Piwik</h2>
+
+<p>Je préfère créer un fichier de template spécifique <code>piwik.html</code> qui contient le <a href="http://developer.piwik.org/guides/tracking-javascript-guide">JavaScript
+de tracking</a> du site. Ce template
+peut référencer les variables <code>PIWIK_URL</code> et <code>PIWIK_IDSITE</code> définies dans le context processor.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">PIWIK_IDSITE</span> <span class="o">%</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="n">var</span> <span class="n">_paq</span> <span class="o">=</span> <span class="n">_paq</span> <span class="o">||</span> <span class="p">[];</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">function</span><span class="p">(){</span> <span class="n">var</span> <span class="n">u</span><span class="o">=</span><span class="p">((</span><span class="s">&quot;https:&quot;</span> <span class="o">==</span> <span class="n">document</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">protocol</span><span class="p">)</span> <span class="err">?</span> <span class="s">&quot;https://{{ PIWIK_URL }}/&quot;</span> <span class="p">:</span> <span class="s">&quot;http://{{ PIWIK_URL }}/&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">_paq</span><span class="o">.</span><span class="n">push</span><span class="p">([</span><span class="s">&#39;setSiteId&#39;</span><span class="p">,</span> <span class="p">{{</span> <span class="n">PIWIK_IDSITE</span> <span class="p">}}]);</span>
+</span><span class='line'>    <span class="n">_paq</span><span class="o">.</span><span class="n">push</span><span class="p">([</span><span class="s">&#39;setTrackerUrl&#39;</span><span class="p">,</span> <span class="n">u</span><span class="o">+</span><span class="s">&#39;piwik.php&#39;</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">_paq</span><span class="o">.</span><span class="n">push</span><span class="p">([</span><span class="s">&#39;trackPageView&#39;</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">_paq</span><span class="o">.</span><span class="n">push</span><span class="p">([</span><span class="s">&#39;enableLinkTracking&#39;</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">var</span> <span class="n">d</span><span class="o">=</span><span class="n">document</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s">&#39;script&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="n">g</span><span class="o">.</span><span class="n">type</span><span class="o">=</span><span class="s">&#39;text/javascript&#39;</span><span class="p">;</span> <span class="n">g</span><span class="o">.</span><span class="n">defer</span><span class="o">=</span><span class="n">true</span><span class="p">;</span> <span class="n">g</span><span class="o">.</span><span class="n">async</span><span class="o">=</span><span class="n">true</span><span class="p">;</span> <span class="n">g</span><span class="o">.</span><span class="n">src</span><span class="o">=</span><span class="n">u</span><span class="o">+</span><span class="s">&#39;piwik.js&#39;</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">s</span><span class="o">.</span><span class="n">parentNode</span><span class="o">.</span><span class="n">insertBefore</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">s</span><span class="p">);</span> <span class="p">})();</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</span><span class='line'><span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ce script est inclus uniquement quand on a renseigné le <code>PIWIK_IDSITE</code>. Ceci permet de choisir de
+ne pas envoyer de statistiques lorsqu&#8217;on est en développement par exemple.</p>
+
+<h2>Intégrer le template Piwik dans le site</h2>
+
+<p>La <a href="http://developer.piwik.org/guides/tracking-javascript-guide">documentation de Piwik</a> conseille
+d&#8217;ajouter le tracking code juste après le tag <code>&lt;body&gt;</code>. Dans votre fichier <code>base.html</code> ou
+équivalent, il faut donc inclure le template piwik que l&#8217;on vient de créer.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="s">&#39;piwik.html&#39;</span> <span class="o">%</span><span class="p">}</span>
+</span><span class='line'><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -507,6 +656,10 @@ scratch (probablement du Angular côté client + du Node avec Express côté ser
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/24/deployer-piwik-avec-django/">Déployer Piwik Avec Django</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/">Supprimer Toutes Les Tables Avec Django 1.7</a>
       </li>
     
@@ -520,10 +673,6 @@ scratch (probablement du Angular côté client + du Node avec Express côté ser
     
       <li class="post">
         <a href="/blog/2014/03/03/premier-code-kata/">FizzBuzz Kata en JavaScript</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/01/presentation/">Présentation</a>
       </li>
     
   </ul>

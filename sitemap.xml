@@ -24,11 +24,15 @@
         <loc>
             http://merwan.github.io/blog/2015/02/23/supprimer-toutes-les-tables-avec-django-17/
         </loc>
-        <lastmod>2015-02-23T17:21:48+01:00</lastmod>
+        <lastmod>2015-02-24T23:03:04+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://merwan.github.io/blog/2015/02/24/deployer-piwik-avec-django/</loc>
+        <lastmod>2015-02-24T23:44:07+01:00</lastmod>
     </url>
     <url>
         <loc>http://merwan.github.io/blog/archives/</loc>
-        <lastmod>2015-02-23T17:21:48+01:00</lastmod>
+        <lastmod>2015-02-24T23:44:07+01:00</lastmod>
     </url>
     <url>
         <loc>http://merwan.github.io/robots.txt</loc>
@@ -36,6 +40,6 @@
     </url>
     <url>
         <loc>http://merwan.github.io/</loc>
-        <lastmod>2015-02-23T17:21:48+01:00</lastmod>
+        <lastmod>2015-02-24T23:44:07+01:00</lastmod>
     </url>
 </urlset>
