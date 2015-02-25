@@ -3,7 +3,7 @@ layout: post
 title: "Déployer Piwik avec Django"
 date: 2015-02-24 22:25:39 +0100
 comments: true
-categories: Django, deploiement
+categories: Django deploiement
 ---
 
 Aujourd'hui, j'ai voulu intégrer [Piwik Web Analytics](http://piwik.org/) dans
